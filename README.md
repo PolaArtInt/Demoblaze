@@ -11,28 +11,32 @@
 
 ## Установка
 
-1.  Установите Python (версия 3.7 или выше).
-2.  Установите Playwright и необходимые браузеры:
+
+1.  Клонируйте репозиторий:
+    ```
+    git clone https://github.com/PolaArtInt/Demoblaze/
+    ```
+3.  Установите Playwright и необходимые браузеры:
 
     ```bash
     pip install playwright
     playwright install
     ```
 
-3.  Установите pytest и Allure:
+4.  Установите pytest и Allure:
 
     ```bash
     pip install pytest allure-pytest
     ```
 
-4.  Клонируйте репозиторий проекта:
+5.  Клонируйте репозиторий проекта:
 
     ```bash
     git clone <URL вашего репозитория>
     cd <название вашего репозитория>
     ```
 
-5.  Установите зависимости проекта:
+6.  Установите зависимости проекта:
 
     ```bash
     pip install -r requirements.txt
