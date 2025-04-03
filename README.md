@@ -12,34 +12,38 @@
 ## Установка
 
 
-1.  Клонируйте репозиторий:
+1.  **Клонируйте репозиторий**:
     ```
     git clone https://github.com/PolaArtInt/Demoblaze/
     ```
-3.  Установите Playwright и необходимые браузеры:
+
+2. **Создайте и активируйте виртуальное окружение:**
 
     ```bash
-    pip install playwright
-    playwright install
+    python -m venv venv
+    ```
+    
+    Для Linux/macOS:
+    ```bash
+    source venv/bin/activate
+    ```
+   
+   Для Windows:
+   ```bash
+    venv/Scripts/activate.ps1
     ```
 
-4.  Установите pytest и Allure:
-
-    ```bash
-    pip install pytest allure-pytest
-    ```
-
-5.  Клонируйте репозиторий проекта:
-
-    ```bash
-    git clone <URL вашего репозитория>
-    cd <название вашего репозитория>
-    ```
-
-6.  Установите зависимости проекта:
-
-    ```bash
+3. **Установите зависимости:**
+   
+   ```bash
     pip install -r requirements.txt
+   ```
+
+4. **Запуск тестов**
+   Для того, чтобы запустить все тесты, выполните следующую команду в корне проекта:
+
+    ```bash
+    pytest
     ```
 
 ## Запуск тестов
