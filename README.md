@@ -1,0 +1,2 @@
+# Demoblaze
+Playwright Automation Project
