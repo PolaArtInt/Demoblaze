@@ -50,6 +50,7 @@ pytest tests/ --alluredir=allure-results
 
 ## Структура проекта
 
+```
 Demoblaze/
 ├── tests/              # Каталог с тестовыми файлами
 │   ├── test_login.py     # Тесты для страницы логина
@@ -64,6 +65,7 @@ Demoblaze/
 ├── allure-results/     # Каталог для результатов Allure
 ├── README.md           # Этот файл
 └── requirements.txt    # Файл с зависимостями проекта
+```
 
 ## Дополнительная информация
 
