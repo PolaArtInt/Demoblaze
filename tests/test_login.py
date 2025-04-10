@@ -1,6 +1,7 @@
 import pytest
 import allure
 
+# comment
 
 @allure.feature('Авторизация')
 @allure.title('Авторизаиця с недействительными учетными данными')
