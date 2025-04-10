@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","207","Авторизация с недействительными учетными данными","tests","Thu Apr 10 18:07:19 GMT 2025","passed","Thu Apr 10 18:07:19 GMT 2025","","test_login","",""
+"","290","Авторизация с корректными учетными данными","tests","Thu Apr 10 18:07:20 GMT 2025","passed","Thu Apr 10 18:07:20 GMT 2025","","test_login","",""
+"","297","Авторизация с корректными учетными данными","tests","Thu Apr 10 18:07:19 GMT 2025","passed","Thu Apr 10 18:07:20 GMT 2025","","test_login","",""
