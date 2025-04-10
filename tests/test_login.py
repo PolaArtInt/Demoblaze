@@ -1,10 +1,9 @@
 import pytest
 import allure
 
-# comment
 
 @allure.feature('Авторизация')
-@allure.title('Авторизаиця с недействительными учетными данными')
+@allure.title('Авторизация с недействительными учетными данными')
 def test_login_failure(login_page):
     with allure.step('Открыть страницу авторизации'):
         login_page.navigate()
@@ -17,7 +16,7 @@ def test_login_failure(login_page):
 @allure.feature('Login')
 @allure.story('Login with valid credentials')
 @allure.severity(allure.severity_level.CRITICAL)
-@allure.title('Авторизаиця с корректными учетными данными')
+@allure.title('Авторизация с корректными учетными данными')
 @pytest.mark.parametrize('username, password', [
     ('user', 'user'),
     ('admin', 'admin')
