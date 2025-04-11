@@ -28,3 +28,14 @@ def test_login_success(login_page, dashboard_page, username, password):
         login_page.login(username, password)
     with allure.step('Отображается приветственное сообщение с именем пользователя'):
         dashboard_page.assert_welcome_message(f"Welcome {username}")
+
+
+@allure.feature('Test')
+@allure.title('Test')
+def test_allure_results_url(login_page):
+    with allure.step('Test'):
+        login_page.navigate()
+    with allure.step('Test'):
+        login_page.login('invalid_user', 'invalid_password')
+    with allure.step('Test'):
+        assert login_page.get_error_message() == 'Invalid credentials. Please try again.'
