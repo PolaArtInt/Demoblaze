@@ -1,6 +1,6 @@
 import pytest
-from pages.login_page import LoginPage
-from pages.dashboard_page import DashboardPage
+from pages.login_page_demo import LoginPage
+from pages.dashboard_page_demo import DashboardPage
 
 
 # DEMO
