@@ -2,7 +2,7 @@ from playwright.sync_api import Page, expect
 
 
 # DEMO
-class DashboardPage:
+class DashboardPageDemo:
     def __init__(self, page: Page):
         self.page = page
         self.profile = page.locator('#usernameDisplay')
