@@ -8,8 +8,8 @@ from pages.login_page import LoginPage
 from pages.product_page import ProductPage
 from pages.signup_page import SignupPage
 
-from pages.login_page_demo import LoginPageDemo
-from pages.dashboard_page_demo import DashboardPageDemo
+# from pages.login_page_demo import LoginPageDemo
+# from pages.dashboard_page_demo import DashboardPageDemo
 
 
 @pytest.fixture
@@ -48,12 +48,12 @@ def signup_page(page):
 
 
 # DEMO
-@pytest.fixture
-def login_page_demo(page):
-    return LoginPageDemo(page)
-
-
-# DEMO
-@pytest.fixture
-def dashboard_page_demo(page):
-    return DashboardPageDemo(page)
+# @pytest.fixture
+# def login_page_demo(page):
+#     return LoginPageDemo(page)
+#
+#
+# # DEMO
+# @pytest.fixture
+# def dashboard_page_demo(page):
+#     return DashboardPageDemo(page)
