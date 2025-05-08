@@ -1,9 +1,12 @@
 from playwright.sync_api import Page
 
+from base.base_page import BasePage
+
 
 # DEMO
-class LoginPageDemo:
+class LoginPageDemo(BasePage):
     def __init__(self, page: Page):
+        super().__init__(page)
         self.page = page
         self.username_input = page.locator('#username')
         self.password_input = page.locator('#password')
