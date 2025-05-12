@@ -11,3 +11,13 @@ class Data:
             "password": fake.password()
         }
         return body
+
+
+class UserPola:
+    @staticmethod
+    def correct_username():
+        return "Pola2"
+
+    @staticmethod
+    def correct_password():
+        return "123"
