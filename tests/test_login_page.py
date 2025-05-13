@@ -1,5 +1,6 @@
 import data.user_data
 from pages.login_page import *
+from data.user_data import *
 
 
 class TestLoginPage:
