@@ -1,6 +1,5 @@
-import pytest
 import allure
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 from base.base_page import BasePage
 
@@ -18,9 +17,13 @@ class LoginPage(BasePage):
         self.PASSWORD_INPUT = page.locator('//input[@id="loginpassword"]')
         self.LOGIN_BTN = page.locator('//button[@onclick="logIn()"]')
 
-    @allure.step("User login")
+    @allure.step("User login to the system:")
     def login(self, username, password):
-        self.LOGIN_LINK.click()
-        self.USERNAME_INPUT.fill(username)
-        self.PASSWORD_INPUT.fill(password)
-        self.LOGIN_BTN.click()
+        with allure.step("Click on the Login Link"):
+            self.LOGIN_LINK.click()
+        with allure.step("Fill in a username"):
+            self.USERNAME_INPUT.fill(username)
+        with allure.step("Fill in a password"):
+            self.PASSWORD_INPUT.fill(password)
+        with allure.step("Click the Login Button"):
+            self.LOGIN_BTN.click()

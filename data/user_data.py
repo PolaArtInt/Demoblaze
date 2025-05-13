@@ -15,9 +15,9 @@ class Data:
 
 class UserPola:
     @staticmethod
-    def correct_username():
+    def fill_username():
         return "Pola2"
 
     @staticmethod
-    def correct_password():
+    def fill_password():
         return "123"
