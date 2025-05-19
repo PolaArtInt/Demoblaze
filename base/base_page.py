@@ -14,3 +14,6 @@ class BasePage:
             self.page.goto(self.URL)
         else:
             print('Page URL not found. Please, check the page URL')
+
+    def find_element(self, selector):
+        return self.page.locator(selector)
