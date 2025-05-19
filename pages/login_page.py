@@ -7,23 +7,27 @@ from base.base_page import BasePage
 class LoginPage(BasePage):
     URL = 'https://www.demoblaze.com'
 
+    LOGIN_LINK = '//a[@id="login2"]'
+    LOGOUT_LINK = '//a[@id="logout2"]'
+    WELCOME_TEXT = '//a[@id="nameofuser"]"]'
+
+    USERNAME_INPUT = '//input[@id="loginusername"]'
+    PASSWORD_INPUT = '//input[@id="loginpassword"]'
+    CLOSE_BTN = '//div[@id="logInModal"]//button[@class="btn btn-secondary"]'
+    LOGIN_BTN = '//button[@onclick="logIn()"]'
+
     def __init__(self, page: Page):
         super().__init__(page)
-        self.LOGIN_LINK = page.locator('//a[@id="login2"]')
-        self.LOGOUT_LINK = page.locator('//a[@id="logout2"]')
-        self.WELCOME_TEXT = page.locator('//a[@id="nameofuser"]"]')
 
-        self.USERNAME_INPUT = page.locator('//input[@id="loginusername"]')
-        self.PASSWORD_INPUT = page.locator('//input[@id="loginpassword"]')
-        self.LOGIN_BTN = page.locator('//button[@onclick="logIn()"]')
+    @allure.step("Open Login modal")
+    def open_login_modal(self):
+        self.find_element(self.LOGIN_LINK).click()
 
     @allure.step("User login to the system:")
     def login(self, username, password):
-        with allure.step("Click on the Login Link"):
-            self.LOGIN_LINK.click()
         with allure.step("Fill in a username"):
-            self.USERNAME_INPUT.fill(username)
+            self.find_element(self.USERNAME_INPUT).fill(username)
         with allure.step("Fill in a password"):
-            self.PASSWORD_INPUT.fill(password)
+            self.find_element(self.PASSWORD_INPUT).fill(password)
         with allure.step("Click the Login Button"):
-            self.LOGIN_BTN.click()
+            self.find_element(self.LOGIN_BTN).click()
