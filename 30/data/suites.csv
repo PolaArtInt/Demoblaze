@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1121","Close sign up modal by clicking on Close button","tests","Thu May 22 18:22:37 GMT 2025","passed","Thu May 22 18:22:38 GMT 2025","TestSignupPage","test_signup_page","",""
+"","2048","Sign up and then login as a newly created user","tests","Thu May 22 18:22:38 GMT 2025","passed","Thu May 22 18:22:40 GMT 2025","TestSignupPage","test_signup_page","",""
+"","1165","Login as an existing user","tests","Thu May 22 18:22:35 GMT 2025","passed","Thu May 22 18:22:36 GMT 2025","TestLoginPage","test_login_page","",""
+"","320","test_check_page_opened[chromium]","tests","Thu May 22 18:22:34 GMT 2025","passed","Thu May 22 18:22:35 GMT 2025","TestCartPage","test_cart_page_no_auth","",""
+"","1151","Close sign up modal by clicking on x button","tests","Thu May 22 18:22:36 GMT 2025","passed","Thu May 22 18:22:37 GMT 2025","TestSignupPage","test_signup_page","",""
