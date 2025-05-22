@@ -23,6 +23,10 @@ class LoginPage(BasePage):
     def open_login_modal(self):
         self.find_element(self.LOGIN_LINK).click()
 
+    @allure.step("Find Logout link")
+    def logout_link(self):
+        return self.find_element(self.LOGOUT_LINK)
+
     @allure.step("User login to the system:")
     def login(self, username, password):
         with allure.step("Fill in a username"):
