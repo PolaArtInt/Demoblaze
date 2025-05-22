@@ -21,3 +21,15 @@ class UserPola:
     @staticmethod
     def fill_password():
         return "123"
+
+
+class UserSignUp:
+    @staticmethod
+    def fill_signup_username():
+        username = fake.user_name()
+        return username
+
+    @staticmethod
+    def fill_signup_password():
+        password = fake.password()
+        return password
