@@ -13,3 +13,15 @@ class CartPage(BasePage):
 
     def __init__(self, page: Page):
         super().__init__(page)
+
+    def cart_page_title(self):
+        return self.find_element(self.CART_PAGE_TITLE)
+
+    def cart_page_total(self):
+        return self.find_element(self.CART_PAGE_TOTAL)
+
+    def cart_page_table(self):
+        return self.find_element(self.CART_PAGE_TABLE)
+
+    def cart_page_place_order_btn(self):
+        return self.find_element(self.PLACE_ORDER_BUTTON)
