@@ -2,6 +2,7 @@ import data.user_data
 from pages.signup_page import *
 from pages.login_page import *
 
+
 class TestSignupPage:
     @staticmethod
     def _close_signup_modal(signup_page, close_method):
