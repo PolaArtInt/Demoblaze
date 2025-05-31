@@ -11,8 +11,8 @@ class CartPage(BasePage):
     CART_PAGE_TABLE = '//table'
     PLACE_ORDER_BUTTON = '//button[@data-target="#orderModal"]'
 
-    def __init__(self, page: Page):
-        super().__init__(page)
+    CART_PRODUCT_TITLE = '//table/tbody/tr[1]/td[2]'
+    DELETE_BTN = '//td//a'
 
     def cart_page_title(self):
         return self.find_element(self.CART_PAGE_TITLE)
@@ -25,3 +25,9 @@ class CartPage(BasePage):
 
     def cart_page_place_order_btn(self):
         return self.find_element(self.PLACE_ORDER_BUTTON)
+
+    def cart_product_title(self):
+        return self.find_element(self.CART_PRODUCT_TITLE)
+
+    def delete_btn(self):
+        return self.find_element(self.DELETE_BTN)

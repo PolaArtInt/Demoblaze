@@ -9,9 +9,6 @@ class ContactPage(BasePage):
 
     CONTACT_LINK = '//a[normalize-space()="Contact"]'
 
-    def __init__(self, page: Page):
-        super().__init__(page)
-
     @allure.step("Open Contact modal")
     def open_contact_modal(self):
         self.find_element(self.find_element(self.CONTACT_LINK)).click()

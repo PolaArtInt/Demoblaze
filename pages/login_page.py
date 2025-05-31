@@ -16,9 +16,6 @@ class LoginPage(BasePage):
     CLOSE_BTN = '//div[@id="logInModal"]//button[@class="btn btn-secondary"]'
     LOGIN_BTN = '//button[@onclick="logIn()"]'
 
-    def __init__(self, page: Page):
-        super().__init__(page)
-
     @allure.step("Open Login modal")
     def open_login_modal(self):
         self.find_element(self.LOGIN_LINK).click()
