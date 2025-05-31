@@ -12,6 +12,7 @@ class CartPage(BasePage):
     PLACE_ORDER_BUTTON = '//button[@data-target="#orderModal"]'
 
     CART_PRODUCT_TITLE = '//table/tbody/tr[1]/td[2]'
+    DELETE_BTN = '//td//a'
 
     def cart_page_title(self):
         return self.find_element(self.CART_PAGE_TITLE)
@@ -27,3 +28,6 @@ class CartPage(BasePage):
 
     def cart_product_title(self):
         return self.find_element(self.CART_PRODUCT_TITLE)
+
+    def delete_btn(self):
+        return self.find_element(self.DELETE_BTN)

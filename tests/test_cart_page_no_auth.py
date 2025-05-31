@@ -24,4 +24,9 @@ class TestCartPage:
         expect(cart_page.cart_page_title(), "Wrong page title").to_have_text('Products')
 
         expected_title = cart_page.cart_product_title().text_content()
+        if '\n' in expected_title:
+            expected_title.strip('\n')
+
         assert expected_title == saved_title, 'Wrong product'
+
+        cart_page.delete_btn().click()
