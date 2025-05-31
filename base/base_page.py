@@ -1,5 +1,5 @@
 import allure
-from playwright.sync_api import Page, expect
+from playwright.sync_api import sync_playwright, Page, expect
 
 
 class BasePage:
@@ -17,3 +17,17 @@ class BasePage:
 
     def find_element(self, selector):
         return self.page.locator(selector)
+
+    def find_elements(self, selector):
+        items = self.page.locator(selector).all()
+        return items
+
+    def await_element(self, selector):
+        return self.page.wait_for_selector(selector)
+
+    @staticmethod
+    @allure.step('Create a random number based on the page items length')
+    def rand_num(num) -> int:
+        import random
+        num = random.randint(0, num - 1)
+        return num

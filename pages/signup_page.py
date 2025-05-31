@@ -15,9 +15,6 @@ class SignupPage(BasePage):
     SIGNUP_PASSWORD_FIELD = '#sign-password'
     SIGNUP_BTN = '//button[normalize-space()="Sign up"]'
 
-    def __init__(self, page: Page):
-        super().__init__(page)
-
     @allure.step("Open Sign up modal")
     def open_signup_modal(self):
         self.find_element(self.SIGNUP_LINK).click()
