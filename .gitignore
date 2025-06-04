@@ -175,6 +175,8 @@ cython_debug/
 
 # Allure-reports:
 /reports
+tests/reports
+allure-results
 
 # .idea folder
 .idea
