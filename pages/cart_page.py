@@ -1,4 +1,5 @@
-from playwright.sync_api import Page, expect
+import allure
+from playwright.sync_api import Page, expect, Dialog
 
 from base.base_page import BasePage
 
@@ -12,6 +13,7 @@ class CartPage(BasePage):
     PLACE_ORDER_BUTTON = '//button[@data-target="#orderModal"]'
 
     CART_PRODUCT_TITLE = '//table/tbody/tr[1]/td[2]'
+    CART_PRODUCT = '//table/tbody/tr'
     DELETE_BTN = '//td//a'
 
     def cart_page_title(self):
@@ -25,6 +27,9 @@ class CartPage(BasePage):
 
     def cart_page_place_order_btn(self):
         return self.find_element(self.PLACE_ORDER_BUTTON)
+
+    def cart_product(self):
+        return self.find_element(self.CART_PRODUCT)
 
     def cart_product_title(self):
         return self.find_element(self.CART_PRODUCT_TITLE)

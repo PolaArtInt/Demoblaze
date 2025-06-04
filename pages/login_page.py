@@ -1,5 +1,5 @@
 import allure
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page, expect, Dialog
 
 from base.base_page import BasePage
 
@@ -16,19 +16,36 @@ class LoginPage(BasePage):
     CLOSE_BTN = '//div[@id="logInModal"]//button[@class="btn btn-secondary"]'
     LOGIN_BTN = '//button[@onclick="logIn()"]'
 
-    @allure.step("Open Login modal")
-    def open_login_modal(self):
-        self.find_element(self.LOGIN_LINK).click()
+    @allure.step("Find Login link")
+    def login_link(self):
+        return self.find_element(self.LOGIN_LINK)
 
     @allure.step("Find Logout link")
     def logout_link(self):
         return self.find_element(self.LOGOUT_LINK)
 
+    def username_input(self):
+        return self.find_element(self.USERNAME_INPUT)
+
+    def password_input(self):
+        return self.find_element(self.PASSWORD_INPUT)
+
+    def login_btn(self):
+        return self.find_element(self.LOGIN_BTN)
+
+    @allure.step("Open Login modal")
+    def open_login_modal(self):
+        expect(self.login_link()).to_be_visible()
+        self.login_link().click()
+
     @allure.step("User login to the system:")
     def login(self, username, password):
         with allure.step("Fill in a username"):
-            self.find_element(self.USERNAME_INPUT).fill(username)
+            expect(self.username_input()).to_be_visible()
+            self.username_input().fill(username)
         with allure.step("Fill in a password"):
-            self.find_element(self.PASSWORD_INPUT).fill(password)
+            expect(self.password_input()).to_be_visible()
+            self.password_input().fill(password)
         with allure.step("Click the Login Button"):
-            self.find_element(self.LOGIN_BTN).click()
+            expect(self.login_btn()).to_be_visible()
+            self.login_btn().click()

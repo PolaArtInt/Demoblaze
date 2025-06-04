@@ -1,11 +1,14 @@
+import allure
+from playwright.sync_api import Page, expect, Dialog
+
 import data.user_data
-from pages.signup_page import *
-from pages.login_page import *
+from pages.signup_page import SignupPage
+from pages.login_page import LoginPage
 
 
 class TestSignupPage:
     @staticmethod
-    def _close_signup_modal(signup_page, close_method):
+    def _close_signup_modal(signup_page: SignupPage, close_method):
         signup_page.visit()
         signup_page.open_signup_modal()
         expect(signup_page.signup_modal(), "Sign up modal is not open").to_be_visible()
@@ -17,17 +20,17 @@ class TestSignupPage:
 
     @allure.feature('Sign up')
     @allure.title('Close sign up modal by clicking on x button')
-    def test_close_signup_modal_by_x_btn(self, signup_page):
+    def test_close_signup_modal_by_x_btn(self, signup_page: SignupPage):
         self._close_signup_modal(signup_page, 'close_signup_modal_by_x_btn')
 
     @allure.feature('Sign up')
     @allure.title('Close sign up modal by clicking on Close button')
-    def test_close_signup_modal_by_close_btn(self, signup_page):
+    def test_close_signup_modal_by_close_btn(self, signup_page: SignupPage):
         self._close_signup_modal(signup_page, 'close_signup_modal_by_close_btn')
 
     @allure.feature('Sign up')
     @allure.title('Sign up and then login as a newly created user')
-    def test_signup(self, login_page, signup_page):
+    def test_signup(self, login_page: LoginPage, signup_page: SignupPage):
         # Generate credentials once
         sign_up_username = data.user_data.UserSignUp.fill_signup_username()
         sign_up_password = data.user_data.UserSignUp.fill_signup_password()

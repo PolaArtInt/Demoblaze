@@ -1,5 +1,5 @@
 import allure
-from playwright.sync_api import sync_playwright, Page, expect
+from playwright.sync_api import Page, expect, Dialog
 
 
 class BasePage:
@@ -11,7 +11,9 @@ class BasePage:
     @allure.step('Open Page URL')
     def visit(self):
         if self.URL:
-            self.page.goto(self.URL)
+            # Используем wait_until='load' для более надежного ожидания загрузки страницы.
+            # Это ждет, пока все основные ресурсы (CSS, JS, изображения) будут загружены.
+            self.page.goto(self.URL, wait_until='load')
         else:
             print('Page URL not found. Please, check the page URL')
 
@@ -19,11 +21,14 @@ class BasePage:
         return self.page.locator(selector)
 
     def find_elements(self, selector):
-        items = self.page.locator(selector).all()
-        return items
+        # find_elements теперь возвращает Locator, на котором можно вызывать .count() или .all()
+        return self.page.locator(selector)
 
-    def await_element(self, selector):
-        return self.page.wait_for_selector(selector)
+    @allure.step('Wait for element to be visible: {selector}')
+    def await_element_visible(self, selector):
+        locator = self.page.locator(selector)
+        expect(locator).to_be_visible()
+        return locator
 
     @staticmethod
     @allure.step('Create a random number based on the page items length')
