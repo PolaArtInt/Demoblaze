@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","398","Verify that cart page elements are displayed","tests","Mon Aug 04 16:00:37 GMT 2025","passed","Mon Aug 04 16:00:37 GMT 2025","TestCartPage","test_cart_page_no_auth","",""
+"","1719","Test adding a random item to the cart without authentication","tests","Mon Aug 04 16:00:37 GMT 2025","passed","Mon Aug 04 16:00:39 GMT 2025","TestCartPage","test_cart_page_no_auth","",""
+"","1784","Login as an existing user","tests","Mon Aug 04 16:00:39 GMT 2025","passed","Mon Aug 04 16:00:41 GMT 2025","TestLoginPage","test_login_page","",""
+"","1089","Close Sign up modal by clicking on different buttons","tests","Mon Aug 04 16:00:41 GMT 2025","passed","Mon Aug 04 16:00:42 GMT 2025","TestSignupPage","test_signup_page","",""
+"","1121","Close Sign up modal by clicking on different buttons","tests","Mon Aug 04 16:00:42 GMT 2025","passed","Mon Aug 04 16:00:43 GMT 2025","TestSignupPage","test_signup_page","",""
+"","2517","Sign up and then login as a newly created user","tests","Mon Aug 04 16:00:43 GMT 2025","passed","Mon Aug 04 16:00:45 GMT 2025","TestSignupPage","test_signup_page","",""
