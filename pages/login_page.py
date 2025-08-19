@@ -9,7 +9,8 @@ class LoginPage(BasePage):
 
     LOGIN_LINK = '//a[@id="login2"]'
     LOGOUT_LINK = '//a[@id="logout2"]'
-    WELCOME_TEXT = '//a[@id="nameofuser"]"]'
+    WELCOME_TEXT = '//a[@id="nameofuser"]'
+    LOGIN_MODAL = '//div[@id="logInModal"]'
 
     USERNAME_INPUT = '//input[@id="loginusername"]'
     PASSWORD_INPUT = '//input[@id="loginpassword"]'
@@ -23,6 +24,12 @@ class LoginPage(BasePage):
     @allure.step("Find Logout link")
     def logout_link(self):
         return self.find_element(self.LOGOUT_LINK)
+    
+    def login_modal(self):
+        return self.find_element(self.LOGIN_MODAL)
+    
+    def welcome_user_link(self):
+        return self.find_element(self.WELCOME_TEXT)
 
     def username_input(self):
         return self.find_element(self.USERNAME_INPUT)
