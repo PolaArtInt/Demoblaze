@@ -1,4 +1,5 @@
 from faker import Faker
+import time
 
 fake = Faker()
 
@@ -26,7 +27,9 @@ class UserPola:
 class UserSignUp:
     @staticmethod
     def fill_signup_username():
-        username = fake.user_name()
+        # Add timestamp to ensure uniqueness
+        timestamp = str(int(time.time()))
+        username = f"{fake.user_name()}_{timestamp}"
         return username
 
     @staticmethod

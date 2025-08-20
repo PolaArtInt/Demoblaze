@@ -54,6 +54,12 @@ class SignupPage(BasePage):
         with allure.step("Fill in a password"):
             expect(self.signup_password_field()).to_be_visible()
             self.find_element(self.SIGNUP_PASSWORD_FIELD).fill(password)
-        with allure.step("Click the Sign up button"):
+        with allure.step("Click the Sign up button and get alert message"):
             expect(self.signup_button()).to_be_visible()
-            self.find_element(self.SIGNUP_BTN).click()
+            with self.page.expect_event("dialog") as dialog_info:
+                self.find_element(self.SIGNUP_BTN).click()
+            
+            dialog = dialog_info.value
+            alert_message = dialog.message
+            dialog.accept()
+            return alert_message
